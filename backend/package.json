@@ -1,0 +1,32 @@
+{
+  "name": "quicknotes-backend",
+  "version": "1.0.0",
+  "description": "Backend API for QuickNotes mini SaaS app",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "node src/database/migrate.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "redis": "^4.6.8",
+    "joi": "^17.9.2",
+    "winston": "^3.10.0",
+    "prom-client": "^14.2.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.6.4"
+  },
+  "keywords": ["notes", "saas", "api", "nodejs", "express"],
+  "author": "",
+  "license": "MIT"
+}

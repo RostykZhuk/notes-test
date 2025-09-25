@@ -1,0 +1,41 @@
+# Development override file
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+
+version: '3.8'
+
+services:
+  # Development API Service - Instance 1
+  api-1:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json:ro
+    command: npm run dev
+
+  # Development API Service - Instance 2
+  api-2:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json:ro
+    command: npm run dev
+
+  # Development database with exposed port
+  postgres:
+    ports:
+      - "5432:5432"
+
+  # Development Redis with exposed port
+  redis:
+    ports:
+      - "6379:6379"
