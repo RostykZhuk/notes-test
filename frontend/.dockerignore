@@ -1,0 +1,11 @@
+node_modules
+.build
+.git
+.gitignore
+.qodo
+Dockerfile
+README.md
+npm-debug.log
+.yarn-cache
+coverage
+build
